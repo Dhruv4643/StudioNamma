@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -175,4 +176,183 @@
     animate();
 </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #e4e4e4;
+            display:relative;
+        }
+
+        .body {
+    background-color: #e4e4e4;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    perspective: 800px;
+}
+
+        .navigation {
+            height: 50px;
+            width: 100vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .darkmode {
+            margin-right: 400px;
+        }
+
+        .menu {
+            margin-right: 200px;
+        }
+
+        .studionamma,
+        .darkmode,
+        .menu,
+        .letstalk {
+            color: #2b2b2b;
+            margin-left: 20px;
+            font-family: "GT Pressura Mono", monospace, sans-serif;
+            font-size: 17px;
+            font-weight: 100;
+            letter-spacing: 3px;
+            transform: scaleX(0.8);
+            transform-origin: left center;
+        }
+
+        .letstalk {
+            letter-spacing: 2px;
+        }
+
+        .text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+
+            font-family: "Mixtape Extra Condensed", sans-serif;
+            font-size: 200px;
+            font-weight: 1000;
+            line-height: 160px;
+            letter-spacing: -10px;
+            transform: scaleX(0.6);
+            color: rgb(17, 17, 17);
+        }
+
+        .text .letter {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(60px);
+            animation: popUp 0.5s forwards;
+        }
+
+        @keyframes popUp {
+            from {
+                opacity: 0;
+                color:#e4e4e4;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .video {
+    position: absolute;
+    z-index: 1000;
+    height: 200px;
+    width: 150px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px black;
+    pointer-events: none;
+    transition: transform 0.15s ease;
+}
+
+
+.video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+    </style>
+</head>
+<body>
+    <div class="body">
+        <div class="video">
+            <video autoplay muted>
+    <source src="variable.mp4" type="video/mp4">
+</video>
+        </div>
+        <div class="navigation">
+            <div class="studionamma">STUDIO NAMMA</div>
+            <div class="darkmode">DARK MODE</div>
+            <div class="menu">MENU</div>
+            <div class="letstalk">LET'S TALK!</div>
+        </div>
+        <div class="text">
+            <div>
+                <span class="letter" style="animation-delay:0.00s">W</span><span class="letter" style="animation-delay:0.05s">E</span><span class="letter" style="animation-delay:0.10s">&nbsp;</span><span class="letter" style="animation-delay:0.15s">T</span><span class="letter" style="animation-delay:0.20s">H</span><span class="letter" style="animation-delay:0.25s">I</span><span class="letter" style="animation-delay:0.30s">N</span><span class="letter" style="animation-delay:0.35s">K</span>
+            </div>
+            <div>
+                <span class="letter" style="animation-delay:0.40s">C</span><span class="letter" style="animation-delay:0.45s">R</span><span class="letter" style="animation-delay:0.50s">A</span><span class="letter" style="animation-delay:0.55s">F</span><span class="letter" style="animation-delay:0.60s">T</span><span class="letter" style="animation-delay:0.65s">&nbsp;</span><span class="letter" style="animation-delay:0.70s">A</span><span class="letter" style="animation-delay:0.75s">N</span><span class="letter" style="animation-delay:0.80s">D</span>
+            </div>
+            <div>
+                <span class="letter" style="animation-delay:0.85s">D</span><span class="letter" style="animation-delay:0.90s">E</span><span class="letter" style="animation-delay:0.95s">S</span><span class="letter" style="animation-delay:1.00s">I</span><span class="letter" style="animation-delay:1.05s">G</span><span class="letter" style="animation-delay:1.10s">N</span>
+            </div>
+        </div>
+    </div>
+    <script>
+    let container = document.querySelector('.video');
+    let badacontainer = document.querySelector('.body');
+
+    let mouseX = 0;
+    let mouseY = 0;
+
+    let currentX = mouseX;
+    let currentY = mouseY;
+    let rotX = 0;
+    let rotY = 0;
+
+    badacontainer.addEventListener('mousemove', (event) => {
+        mouseX = event.clientX;
+        mouseY = event.clientY;
+    });
+
+    function animate() {
+        const dx = mouseX - currentX;
+        const dy = mouseY - currentY;
+
+        currentX += dx * 0.08;
+        currentY += dy * 0.08;
+
+        const targetRotY = Math.max(-70, Math.min(70, dx*0.1));
+        const targetRotX = Math.max(-70, Math.min(70, dy*-0.1));
+
+        rotY += (targetRotY - rotY) * 0.5;
+        rotX += (targetRotX - rotX) * 0.5;
+
+        container.style.left = currentX + 'px';
+        container.style.top = currentY + 'px';
+        container.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+</script>
+</body>
+>>>>>>> 555ff4e2861708b255ccf8fe0898565da8fc7bf7
 </html>
