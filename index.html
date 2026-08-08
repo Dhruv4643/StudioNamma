@@ -3,179 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-color: #e4e4e4;
-            display:relative;
-        }
-
-        .body {
-    background-color: #e4e4e4;
-    min-height: 100vh;
-    position: relative;
-    overflow: hidden;
-    perspective: 800px;
-}
-
-        .navigation {
-            height: 50px;
-            width: 100vw;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            z-index:2000;
-        }
-
-        .darkmode {
-            margin-right: 400px;
-            cursor: pointer;
-        }
-
-        .menu {
-            margin-right: 200px;
-        }
-
-        .studionamma,
-        .darkmode,
-        .menu,
-        .letstalk,.bottomtext {
-            color: #2b2b2b;
-            margin-left: 20px;
-            font-family: "GT Pressura Mono", monospace, sans-serif;
-            font-size: 17px;
-            font-weight: 100;
-            letter-spacing: 3px;
-            transform: scaleX(0.8);
-            transform-origin: left center;
-        }
-
-        .letstalk {
-            letter-spacing: 2px;
-        }
-
-        .text {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: 30px;
-
-            font-family: "Mixtape Extra Condensed", sans-serif;
-            font-size: 200px;
-            font-weight: 1000;
-            line-height: 160px;
-            letter-spacing: -10px;
-            transform: scaleX(0.6);
-            color: rgb(17, 17, 17);
-        }
-
-        .text .letter {
-            display: inline-block;
-            opacity: 0;
-            transform: translateY(60px);
-            animation: popUp 0.5s forwards;
-        }
-
-        @keyframes popUp {
-            from {
-                opacity: 0;
-                color:#e4e4e4;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        .video {
-    position: absolute;
-    z-index: 1000;
-    height: 300px;
-    width: 250px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0px 0px 10px black;
-    pointer-events: none;
-    transition: transform 0.15s ease;
-}
-
-
-.video video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-body.light .body {
-    background-color: #e4e4e4;
-}
-
-body.light .text {
-    color: rgb(17, 17, 17);
-}
-
-body.light .studionamma,
-body.light .darkmode,
-body.light .menu,
-body.light .letstalk,
-body.light .bottomtext,
-body.light .location,
-body.light .time {
-    color: #2b2b2b;
-}
-
-
-body.dark .body {
-    background-color: rgb(17, 17, 17);
-}
-
-body.dark .text {
-    color: #e4e4e4;
-}
-
-body.dark .studionamma,
-body.dark .darkmode,
-body.dark .menu,
-body.dark .letstalk,
-body.dark .bottomtext,
-body.dark .location,
-body.dark .time {
-    color: #e4e4e4;
-}
-
-.footer {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 2000;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-.location,
-.time {
-    color: #2b2b2b;
-    font-family: "GT Pressura Mono", monospace, sans-serif;
-    font-size: 17px;
-    font-weight: 100;
-    letter-spacing: 3px;
-}
-    </style>
 </head>
 <body>
     <div class="body">
         <div class="video">
             <video autoplay muted loop>
     <source src="variable.mp4" type="video/mp4">
+
 </video>
         </div>
         <div class="navigation">
@@ -202,82 +38,42 @@ body.dark .time {
                 <div class="time" id="liveTime">00:00:00</div>
             </div>
         </div>
+        <div class="scroll">[[SCROLL]]
+            </div>
+        <div class="introvideo">
+            <video autoplay muted loop>
+                <source src="WhatsApp Video 2026-08-08 at 8.06.32 AM.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="section-3">
+                <p class="small-text">CREATIVE STUDIO BUILDING PREMIUM BRAND</p>
+                <p class="semi-large-text">IT’S NEVER “JUST A WEBSITE.”</p>
+                <p class="semi-large-text">EVERY 
+                    <span class="underline" id="detail">
+                        DETAIL
+                        <img class="detail-img" src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/68d143844e199c5fe25893c6_Details%201.webp" alt="">
+                        <img class="detail-img" src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/68d14384921ac39670293bad_Details2.webp" alt="">
+                        <img class="detail-img" src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/68d14384e95f535d6ce77d4f_Details3.webp" alt="">
+                        <img class="detail-img" src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/68d14384e6539b091e5c0c8b_Details4.webp" alt="">
+                        <img class="detail-img" src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/68d14384b8a083b5d518278d_Details5.webp" alt="">
+                    </span>
+                     MATTERS.</p>
+                <p class="semi-large-text">WE CRAFT DIGITAL EXPERIENCES.</p>
+                <p class="semi-large-text">YOUR DESIGN. OUR OBSESSION.</p>
+                <p class="semi-large-text">YOUR BRAND. OUR 
+                    <span class="underline" id="playground">
+                        PLAYGROUND
+                        <img class="playground-img" src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/68d1446a128c7643746e47f9_Playground1.webp" alt="">
+                        <img class="playground-img" src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/68d1446a83ac058871c1ccfc_Playground2.webp" alt="">
+                        <img class="playground-img" src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/68d1446a3ce130a222671480_Playground3.webp" alt="">
+                        <img class="playground-img" src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/68d1446a796dfc08d400d6ea_Playground4.webp" alt="">
+                        <img class="playground-img" src="https://cdn.prod.website-files.com/679cb9cacf00799ba4b4c985/68d1446a8736b633433d00f9_Playground5.webp" alt="">
+                    </span>.
+                </p>
+            </div>
+        
     </div>
-    <script>
-    let container = document.querySelector('.video');
-    let badacontainer = document.querySelector('.body');
+        <script src="script.js"></script>
 
-    let mouseX = 0;
-    let mouseY = 0;
-
-    let currentX = mouseX;
-    let currentY = mouseY;
-    let rotX = 0;
-    let rotY = 0;
-
-    badacontainer.addEventListener('mousemove', (event) => {
-        mouseX = event.clientX;
-        mouseY = event.clientY;
-    });
-
-    function animate() {
-        const dx = mouseX - currentX;
-        const dy = mouseY - currentY;
-
-        currentX += dx * 0.08;
-        currentY += dy * 0.08;
-
-        const targetRotY = Math.max(-70, Math.min(70, dx * 0.1));
-        const targetRotX = Math.max(-70, Math.min(70, dy * -0.1));
-
-        rotY += (targetRotY - rotY) * 0.5;
-        rotX += (targetRotX - rotX) * 0.5;
-
-        container.style.left = currentX + 'px';
-        container.style.top = currentY + 'px';
-        container.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
-
-        requestAnimationFrame(animate);
-    }
-
-    animate();
-
-    const themeToggle = document.getElementById('themeToggle');
-    const savedTheme = localStorage.getItem('studio-namma-theme');
-    const body = document.body;
-
-    const applyTheme = (theme) => {
-        body.classList.toggle('light', theme === 'light');
-        body.classList.toggle('dark', theme === 'dark');
-        themeToggle.textContent = theme === 'dark' ? 'LIGHT MODE' : 'DARK MODE';
-        localStorage.setItem('studio-namma-theme', theme);
-    };
-
-    if (savedTheme === 'light' || savedTheme === 'dark') {
-        applyTheme(savedTheme);
-    } else {
-        applyTheme('dark');
-    }
-
-    themeToggle.addEventListener('click', () => {
-        const nextTheme = body.classList.contains('dark') ? 'light' : 'dark';
-        applyTheme(nextTheme);
-    });
-
-    function updateTime() {
-        const now = new Date();
-        const timeStr = now.toLocaleTimeString('en-GB', {
-            timeZone: 'Asia/Hong_Kong',
-            hour12: false,
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit'
-        });
-        document.getElementById('liveTime').textContent = timeStr;
-    }
-
-    updateTime();
-    setInterval(updateTime, 1000);
-</script>
 </body>
 </html>
