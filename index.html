@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,10 +29,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
+            z-index:2000;
         }
 
         .darkmode {
             margin-right: 400px;
+            cursor: pointer;
         }
 
         .menu {
@@ -43,7 +45,7 @@
         .studionamma,
         .darkmode,
         .menu,
-        .letstalk {
+        .letstalk,.bottomtext {
             color: #2b2b2b;
             margin-left: 20px;
             font-family: "GT Pressura Mono", monospace, sans-serif;
@@ -109,18 +111,76 @@
     height: 100%;
     object-fit: cover;
 }
+body.light .body {
+    background-color: #e4e4e4;
+}
+
+body.light .text {
+    color: rgb(17, 17, 17);
+}
+
+body.light .studionamma,
+body.light .darkmode,
+body.light .menu,
+body.light .letstalk,
+body.light .bottomtext,
+body.light .location,
+body.light .time {
+    color: #2b2b2b;
+}
+
+
+body.dark .body {
+    background-color: rgb(17, 17, 17);
+}
+
+body.dark .text {
+    color: #e4e4e4;
+}
+
+body.dark .studionamma,
+body.dark .darkmode,
+body.dark .menu,
+body.dark .letstalk,
+body.dark .bottomtext,
+body.dark .location,
+body.dark .time {
+    color: #e4e4e4;
+}
+
+.footer {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2000;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.location,
+.time {
+    color: #2b2b2b;
+    font-family: "GT Pressura Mono", monospace, sans-serif;
+    font-size: 17px;
+    font-weight: 100;
+    letter-spacing: 3px;
+}
     </style>
 </head>
 <body>
     <div class="body">
         <div class="video">
-            <video autoplay muted>
+            <video autoplay muted loop>
     <source src="variable.mp4" type="video/mp4">
 </video>
         </div>
         <div class="navigation">
             <div class="studionamma">STUDIO NAMMA</div>
-            <div class="darkmode">DARK MODE</div>
+            <div class="darkmode" id="themeToggle">DARK MODE</div>
             <div class="menu">MENU</div>
             <div class="letstalk">LET'S TALK!</div>
         </div>
@@ -133,6 +193,13 @@
             </div>
             <div>
                 <span class="letter" style="animation-delay:0.85s">D</span><span class="letter" style="animation-delay:0.90s">E</span><span class="letter" style="animation-delay:0.95s">S</span><span class="letter" style="animation-delay:1.00s">I</span><span class="letter" style="animation-delay:1.05s">G</span><span class="letter" style="animation-delay:1.10s">N</span>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="bottomtext">WE CRAFT BOLD DESIGN & CLEAN WEBFLOW.</div>
+            <div style="display:flex; gap:20px; align-items:center;">
+                <div class="location">HONG KONG, CHINA</div>
+                <div class="time" id="liveTime">00:00:00</div>
             </div>
         </div>
     </div>
@@ -160,8 +227,8 @@
         currentX += dx * 0.08;
         currentY += dy * 0.08;
 
-        const targetRotY = Math.max(-70, Math.min(70, dx*0.1));
-        const targetRotX = Math.max(-70, Math.min(70, dy*-0.1));
+        const targetRotY = Math.max(-70, Math.min(70, dx * 0.1));
+        const targetRotX = Math.max(-70, Math.min(70, dy * -0.1));
 
         rotY += (targetRotY - rotY) * 0.5;
         rotX += (targetRotX - rotX) * 0.5;
@@ -174,7 +241,43 @@
     }
 
     animate();
+
+    const themeToggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('studio-namma-theme');
+    const body = document.body;
+
+    const applyTheme = (theme) => {
+        body.classList.toggle('light', theme === 'light');
+        body.classList.toggle('dark', theme === 'dark');
+        themeToggle.textContent = theme === 'dark' ? 'LIGHT MODE' : 'DARK MODE';
+        localStorage.setItem('studio-namma-theme', theme);
+    };
+
+    if (savedTheme === 'light' || savedTheme === 'dark') {
+        applyTheme(savedTheme);
+    } else {
+        applyTheme('dark');
+    }
+
+    themeToggle.addEventListener('click', () => {
+        const nextTheme = body.classList.contains('dark') ? 'light' : 'dark';
+        applyTheme(nextTheme);
+    });
+
+    function updateTime() {
+        const now = new Date();
+        const timeStr = now.toLocaleTimeString('en-GB', {
+            timeZone: 'Asia/Hong_Kong',
+            hour12: false,
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit'
+        });
+        document.getElementById('liveTime').textContent = timeStr;
+    }
+
+    updateTime();
+    setInterval(updateTime, 1000);
 </script>
 </body>
-
-     
+</html>
