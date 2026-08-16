@@ -1,4 +1,4 @@
- let container = document.querySelector('.video');
+let container = document.querySelector('.video');
     let badacontainer = document.querySelector('.body');
 
     let mouseX = 0;
@@ -120,7 +120,6 @@ uplayground.addEventListener('mouseleave', () => {
 });
 
 function playImageSequence(images) {
-    // console.log(images);
     let currentImg = images[currentIndex];
     images.forEach((img) => {
         if (img !== currentImg) {
@@ -154,3 +153,45 @@ uplayground.addEventListener('mouseleave', () => {
         cursor.style.borderRadius = '50px';
     }
 });
+document.querySelectorAll('.section-5-div').forEach((div) => {
+    const caseVideo = div.querySelector('video');
+    div.addEventListener('mouseenter', () => {
+        caseVideo.currentTime = 0;
+        caseVideo.play();
+    });
+    div.addEventListener('mouseleave', () => {
+        caseVideo.pause();
+        caseVideo.currentTime = 0;
+    });
+});
+
+services.forEach((div)=>{
+
+    let service_video = div.querySelector('video');
+    let small_service_text = div.querySelector('.service-small-text')
+    let service_text = div.querySelector('.service-text');
+    div.addEventListener('mouseenter',()=>{
+        service_video.style.transition = 'height 0.4s';
+        service_video.style.opacity = '1';
+        service_video.style.height = '262.5px';
+        service_text.style.zIndex = '11';
+        small_service_text.style.opacity = '1';
+        
+        services.forEach((otherDiv) => {
+            if(otherDiv !== div) {
+                otherDiv.querySelector('.service-text').style.opacity = '0.5';
+            }
+        });
+    })
+    div.addEventListener('mouseleave',()=>{
+        service_video.style.transition = 'height 0';
+        service_video.style.height = '0px';
+        service_video.style.opacity = '0';
+        service_text.style.zIndex = '9';
+        small_service_text.style.opacity = '0';
+
+        services.forEach((otherDiv) => {
+            otherDiv.querySelector('.service-text').style.opacity = '1';
+        });
+    })
+})
