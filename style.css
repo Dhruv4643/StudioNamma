@@ -404,3 +404,23 @@ body.dark .small-text {
 .see-all:hover i {
     transform: translateX(5px);
 }
+.section-7{
+    height: 50vh;
+    width: 100%;
+    margin: 0 10px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E4E4E4;
+    z-index: 3;
+    gap: 4%;
+    padding: 20px 0;
+}
+.section-7 img{
+    max-width: 16%;
+    object-fit: cover;
+    border-radius: 7px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
