@@ -43,9 +43,7 @@ body {
 .bottomtext,
 .location,
 .time,
-.scroll,
-.service-small-text,
-.see-all p {
+.scroll {
     color: #2b2b2b;
     margin-left: 20px;
     font-family: "GT Pressura Mono", monospace, sans-serif;
@@ -150,8 +148,7 @@ body.light .section-6 {
 body.dark .body,
 body.dark .section-3,
 body.dark .section-5,
-body.dark .section-6,
-body.light .see-all p{
+body.dark .section-6 {
     background-color: rgb(17, 17, 17);
 }
 
@@ -438,7 +435,6 @@ body.dark .section-7 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #E4E4E4;
     z-index: 3;
     gap: 4%;
     padding: 20px 0;
