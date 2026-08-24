@@ -111,7 +111,6 @@ body {
     object-fit: cover;
 }
 
-/* Light Mode Styles */
 body.light .body {
     background-color: #e4e4e4;
 }
@@ -173,6 +172,28 @@ body.dark .small-text {
     justify-content: center;
     margin-top: 100px;
     margin-bottom: 100px;
+    margin-left:100px;
+}
+body.light .service-text,
+body.light .service-small-text,
+body.light .see-all,
+body.light .footer_logo_stretch {
+    color: rgb(17, 17, 17);
+}
+
+body.light .section-7 {
+    background-color: #e4e4e4;
+}
+
+body.dark .service-text,
+body.dark .service-small-text,
+body.dark .see-all,
+body.dark .footer_logo_stretch {
+    color: #e4e4e4;
+}
+
+body.dark .section-7 {
+    background-color: rgb(17, 17, 17);
 }
 
 .footer {
@@ -280,6 +301,7 @@ body.dark .small-text {
     gap: 20px;
     padding: 0 20px;
     z-index: 3;
+    top:200px;
 }
 
 .section-5-div {
