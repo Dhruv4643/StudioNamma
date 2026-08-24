@@ -14,7 +14,6 @@ body {
     background-color: #e4e4e4;
     min-height: 100vh;
     position: relative;
-    overflow-x: hidden;
     perspective: 800px;
 }
 
@@ -43,7 +42,9 @@ body {
 .bottomtext,
 .location,
 .time,
-.scroll {
+.scroll,
+.service-small-text,
+.see-all p {
     color: #2b2b2b;
     margin-left: 20px;
     font-family: "GT Pressura Mono", monospace, sans-serif;
@@ -163,7 +164,8 @@ body.dark .bottomtext,
 body.dark .location,
 body.dark .time,
 body.dark .scroll,
-body.dark .small-text {
+body.dark .small-text,
+body.dark.see-all p {
     color: #e4e4e4;
 }
 
@@ -302,7 +304,6 @@ body.dark .section-7 {
     gap: 20px;
     padding: 0 20px;
     z-index: 3;
-    top:200px;
 }
 
 .section-5-div {
@@ -312,7 +313,9 @@ body.dark .section-7 {
 
 .section-5-div img {
     width: 100%;
-    object-fit: cover;
+    height: auto;
+    display: block;
+    object-fit: contain;
     border-radius: 7px;
     transition: all 0.3s ease;
 }
@@ -323,7 +326,7 @@ body.dark .section-7 {
     left: 50%;
     width: 70%;
     transform: translate(-50%, -50%);
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 7px;
     opacity: 0;
     transition: linear 0.3s;
@@ -435,6 +438,7 @@ body.dark .section-7 {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #E4E4E4;
     z-index: 3;
     gap: 4%;
     padding: 20px 0;
@@ -445,4 +449,7 @@ body.dark .section-7 {
     border-radius: 7px;
     transition: all 0.3s ease;
     cursor: pointer;
+}
+.bigplayground{
+    margin-bottom: 200px;
 }
