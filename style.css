@@ -43,7 +43,8 @@ body {
 .bottomtext,
 .location,
 .time,
-.scroll {
+.scroll,
+.service-small-text {
     color: #2b2b2b;
     margin-left: 20px;
     font-family: "GT Pressura Mono", monospace, sans-serif;
