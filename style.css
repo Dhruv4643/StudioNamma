@@ -44,7 +44,8 @@ body {
 .location,
 .time,
 .scroll,
-.service-small-text {
+.service-small-text,
+.see-all p {
     color: #2b2b2b;
     margin-left: 20px;
     font-family: "GT Pressura Mono", monospace, sans-serif;
@@ -129,7 +130,8 @@ body.light .location,
 body.light .time,
 body.light .scroll,
 body.light .small-text,
-body.light .bigplayground {
+body.light .bigplayground,
+body.light .see-all p {
     color: #2b2b2b;
 }
 
@@ -148,7 +150,8 @@ body.light .section-6 {
 body.dark .body,
 body.dark .section-3,
 body.dark .section-5,
-body.dark .section-6 {
+body.dark .section-6,
+body.light .see-all p{
     background-color: rgb(17, 17, 17);
 }
 

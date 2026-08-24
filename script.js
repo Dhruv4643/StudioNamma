@@ -177,7 +177,6 @@ document.querySelectorAll('.section-5-div').forEach((div) => {
     }
 });
 
-// Fix: Query selector added to avoid runtime error
 const services = document.querySelectorAll('.service-div');
 
 services.forEach((div) => {
